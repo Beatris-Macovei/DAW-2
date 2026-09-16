@@ -60,6 +60,29 @@
             echo "<p> EL precio con IVA es: " . $precio + $precio * IVA_GENERAL ."</p>";
             echo "<p> EL precio con IVA reducido es: " . $precio + $precio * IVA_REDUCIDO ."</p>";
 
+            var_dump(PHP_VERSION);
+
+            var_dump(__FILE__);
+
+            $price = 29.3;
+
+            //OPERADORES (nuevos)
+            $a = 5;
+            $b = $a **3;            //5 elevado a 10. (EXPONENTE)
+            var_dump($b);
+
+            $a = 7;
+            $mod = $a % 2;  //1 (resto de la division entera)
+            $a = 11;
+            $mod = $a % 4; //3
+
+            //Operadores de incremento
+            $a = 1;
+            $a++; //$a = $a + 1;
+            $a +=4; //$a = $a + 4;
+
+            
+
         ?>  
     </p>
 </body>
