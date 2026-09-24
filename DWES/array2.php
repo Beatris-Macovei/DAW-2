@@ -93,8 +93,43 @@
                     
                     echo "</tr>";
                 }
+
+                    
+
             ?>
         </table>
+        <?php
+
+        //funcion que reciba un array asociativo, e imprima en una tabla las claves y
+                //  el tipo del valor que tiene.
+                //por ejemplo:
+                /*
+                    clave     | tipo
+                    name      | string
+                    address   | string
+                    employees | array
+                    quanty    | array
+                */
+
+        function clavesYtipos($array) : string {
+            $ret = '<table border="1">'; //$ret = "<table border=\"1\">";
+            $ret .= "<tr>
+            <th>Nombre</th>
+            <th>Tipo</th></tr>";
+            foreach($array as $restaurant){
+                foreach($restaurant as $key => $value){
+                    $ret .= "<tr>
+                    <td>$key</td>
+                    <td>" . gettype($value) . "</td>
+                    </tr>";
+                }
+            }
+            $ret .= "</table>"; //$ret = $ret . "</table>";
+            return $ret;
+        }
+        echo clavesYtipos($p);
+
+        ?>
     </p>
 
 </body>
