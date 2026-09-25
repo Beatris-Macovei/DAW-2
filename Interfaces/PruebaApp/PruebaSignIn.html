@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <!--IMAGEN LOGO QUE LLEVA AL INICIO-->
+                <li><a href="PruebaSignIn.html"></a>Sign In</li>
+                <li><a href="Create_Account"></a>Create Account</li>
+                <li><a href="Films"></a>Films</li>
+                <li><a href="Lists"></a>Lists</li>
+                <li><a href="Members"></a>Members</li>
+                <li><a href="Journal"></a>Journal</li>
+                <!--BUSCADOR-->
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <!--LOGO-->
+        <h2>Log in to Letterboxd</h2>
+        <form action="/enviar" method="post">
+            <!-- action /enviar = a dónde se envían los datos-->
+            
+
+                <!--CONTINUE (REDES)-->
+
+                <legend>Email or username</legend>
+                <label for="identificador"></label>
+                <input 
+                    type="text" 
+                    id="identificador" 
+                    name="identificador" 
+                    placeholder="Email or username"
+                    autocomplete="username"
+                    required
+                >
+                <div class="mensaje-error" id="errorIdentificador" hidden>
+                    <span class="icono">⚠</span>
+                    <span>Please enter your Letterboxd username or email adress.</span>
+                </div>
+
+                <legend>Password</legend>
+                <label for="contraseña"></label>
+                <input
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    placeholder="Password"
+                    autocomplete="current-password"
+                    required
+                >
+                <br>    
+                <label>
+                    <input type="checkbox" name="acepto" value="si">
+                    Remember me
+                </label>
+                <br>
+                <button type="submit">Log in</button>
+
+                <p>Forgot your password?</p>
+        </form>
+    </section>
+</body>
+</html>
