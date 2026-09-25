@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="PruebaAccount.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>   
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <!--IMAGEN LOGO QUE LLEVA AL INICIO-->
+                <li><a href="PruebaSignIn.html"></a>Sign In</li>
+                <li><a href="PruebaAccount.html"></a>Create Account</li>
+                <li><a href="Films"></a>Films</li>
+                <li><a href="Lists"></a>Lists</li>
+                <li><a href="Members"></a>Members</li>
+                <li><a href="Journal"></a>Journal</li>
+                <!--BUSCADOR-->
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <!--LOGO-->
+        <h2>Log in to Letterboxd</h2>
+        <form action="/enviar" method="post">
+            <!-- action /enviar = a dónde se envían los datos-->
+            
+
+                <button type="button" class="social-btn google">Continue with Google</button>
+                <button type="button" class="social-btn facebook">Continue with Facebook</button>
+                <button type="button" class="social-btn apple">Continue with Apple</button>
+
+                <legend>Email</legend>
+                <label for="identificador"></label>
+                <input 
+                    type="text" 
+                    id="identificador" 
+                    name="identificador" 
+                    placeholder="Email"
+                    autocomplete="username"
+                    required
+                >
+                <div class="mensaje-error" id="errorIdentificador" hidden>
+                    <span class="icono">⚠</span>
+                    <span>Please enter your Letterboxd username or email adress.</span>
+                </div>
+
+                <legend>Password</legend>
+                <label for="contraseña"></label>
+                <input
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    placeholder="Password"
+                    autocomplete="current-password"
+                    required
+                >
+                <br>
+                <label for="contraseña"></label>
+                <input
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    placeholder="Repeat your password"
+                    autocomplete="current-password"
+                    required
+                >
+                
+                <br>    
+                <label class="remember">
+                    <input type="checkbox" name="acepto" value="si" class="toggle">
+                    Remember me
+                </label>
+                <br>
+                <button type="submit">Log in</button>
+
+                <p>Forgot your password?</p>
+        </form>
+    </section>
+</body>
+</html>
