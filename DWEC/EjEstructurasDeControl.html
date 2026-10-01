@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Estructuras de Control</title>
+</head>
+<body>
+
+    <script>
+        //Ejercicio 1
+        let edadP = 15;
+        let precioEntrada;
+
+        if(edadP < 12){
+            precioEntrada = 6;
+            console.log("El precio de la entrada es: " + precioEntrada);
+        }else if(edadP > 65){
+            precioEntrada = 8;
+            console.log("El precio de la entrada es: " + precioEntrada);
+        }else{
+            precioEntrada = 12;
+            console.log("El precio de la entrada es: " + precioEntrada);
+        }
+
+    </script>
+    <script>
+        //Ejercicio 2
+        let edad = 22;
+        let tieneAcreditacion = true;
+
+        if(edad >= 18 && tieneAcreditacion){
+            console.log("Acceso permitido");
+        }else{
+            console.log("Acceso denegado");
+        }
+
+    </script>
+    <script>
+        //Ejercicio 3
+        let tipoUsuario = "E";
+
+        switch(tipoUsuario){
+            case "A" : console.log("Administrados");
+            break;
+            case "E" : console.log("Editor");
+            break;
+            case "L" : console.log("Lector");
+            break;
+            default : console.log("Tipo de usuario desconocido");
+        }
+
+    </script>
+    <script>
+        //Ejercicio 4
+        for(let num = 1; num < 64;){
+            num = num * 2;
+            console.log(num);
+        }
+
+    </script>
+    <script>
+        //Ejercicio 5
+        let suma = 0;
+        for(i = 1; i <= 10; i++){
+            suma = suma + i;
+        }
+        console.log(suma);
+    </script>
+    <script>
+        //Ejercicio 6
+        let deuda = 90;
+        while(deuda > 0){
+            deuda = deuda - 15;
+            console.log("La deuda es de: " + deuda);
+        }
+        console.log("Deuda pagada");
+
+    </script>
+    <script>
+        //Ejercicio 7
+        let carga = 10;
+        do{
+            carga += 15;
+            console.log(carga);
+        }while(carga < 70)
+
+    </script>
+    <script>
+        //Ejercicio 8
+        for(i = 1; i <= 100; i++){
+            if((i % 6 === 0) && (i % 7 === 0)){
+                console.log(i);
+                break;
+            }
+            
+        }
+
+    </script>
+    <script>
+        //Ejercicio 9
+        for(i = 1; i <= 30; i++){
+            if(i % 10 === 5){
+                continue;
+            }
+            console.log(i);
+        }
+
+    </script>
+    <script>
+        //Ejercicio 10
+        for (let fila = 1; fila <= 4; fila++) {
+            for (let asiento = 1; asiento <= 6; asiento++) {
+                console.log("Fila: " + fila + " " + "Asiento: " + asiento);
+                
+            }
+        }
+
+    </script>
+    <script>
+        //Ejercicio 11
+        for (let categoria = 1; categoria <= 3; categoria++) {
+            for (let elementos = 1; elementos <= 6; elementos++) {
+                if (elementos === 4){
+                    break;
+                }
+                console.log("Categoria: " + categoria + " " + "Elemento: " + elementos);
+            }
+        }
+
+    </script>
+    <script>
+        //Ejercicio 12
+        biblioteca:
+        for (let secciones = 1; secciones <= 5; secciones++) {
+            for (let estantes = 1; estantes <= 8; estantes++) {
+                if (secciones === 4 && estantes === 3){
+                    console.log("Libro localizado");
+                    break biblioteca;
+                }
+           }
+        }
+    </script>
+    <script>
+        //Ejercicio 13
+        let velocidad = 50;
+        if(velocidad < 30){
+            console.log("Velocidad insuficiente");
+        }else if(velocidad >= 30 && velocidad <= 100){
+            console.log("Velocidad correcta");
+        }else{
+            console.log("Exceso de velocidad");
+        }
+
+    </script>
+    <script>
+        //Ejercicio 14
+        for(let cif = 0; cif < 30;){
+            cif = cif + 3;
+            console.log(cif);
+        }
+
+    </script>
+    <script>
+        //Ejercicio 15
+        let idioma = "en";
+        switch(idioma){
+            case "es" : console.log("Español");
+            break;
+            case "en" : console.log("Ingles");
+            break;
+            case "fr" : console.log("Frances");
+            break;
+            default : console.log("Idioma no disponible");
+        }
+
+    </script>
+
+</body>
+</html>
