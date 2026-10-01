@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Variable</title>
+</head>
+<body>
+
+    <script>
+        let importe = 150;
+                if(importe > 100){
+                    console.log("Se ha aplicado el dexcuento");
+                }
+
+        let temperatura = 20;
+                if(temperatura >= 18 && temperatura <=25){
+                    console.log("Temperatura adecuada");
+                } else{
+                    console.log("Temperatura fuera de rango");
+                }
+
+        let velocidad = 40;
+                if(velocidad < 50){
+                    console.log("La velocidad es baja");
+                }else if(velocidad >= 50 && velocidad <= 90){
+                    console.log("Velocidad media");
+                }else{
+                    console.log("Velocidad alta");
+                }
+
+        let num;
+        while( num < 100){
+            if(cont = 8){
+                break;
+                if(num % 7 == 0){
+                    contador++;
+                    console.log(num);
+            }
+            }
+            num++;
+        }
+
+        for(i=1; i<=10; i++){
+            if(i % 3 == 0) continue;
+            console.log(i);
+        }
+        console.log("------");
+
+        /*Un almacen de 3 zonas y cada zona contiene 5 estanterias
+          Escribe dos bucles for anidados para recorrer todas las posiciones
+          Etiqueta el bucle exterior con el nombre del almacen
+          Cuando se llegue a la zona 2 y a la estanteria 4, deberan finalizarse los dos bucles mediante break y la etiqueta
+          Antes de finalizar, muestra en la consola*/
+        almacen:
+        for (let zona = 1; zona <= 3; zona++) {
+            for (let estanteria = 1; estanteria <= 5; estanteria++) {
+                console.log(zona + " " + estanteria);
+                if (zona === 2 && estanteria === 4) {
+                    console.log("Producto localizado");
+                    break almacen;
+                }
+                
+            }
+        }
+
+    </script>
+</body>
+</html>
