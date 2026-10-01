@@ -1,0 +1,228 @@
+/*
+
+EJERCICIO 1.
+
+Pregunta 1.
+
+let edad = 20;
+let resultado = edad >= 18 && edad <= 30;
+
+resultado =  true
+
+Pregunta 2.
+
+let edad = 35;
+let resultado = edad < 18 || edad > 65;
+
+resultado = false
+
+Pregunta 3.
+
+let temperatura = 38;
+let resultado = temperatura < 0 || temperatura > 35;
+
+resultado = true
+
+Pregunta 4
+
+let edad = 16;
+let tienePermiso = true;
+let resultado = edad >= 18 || tienePermiso;
+
+resultado = true
+
+Pregunta 5
+
+let usuarioActivo = false;
+let resultado = !usuarioActivo;
+
+resultado = true
+
+Pregunta 6
+
+let edad = 25;
+let tieneCarnet = false;
+let resultado = edad >= 18 && !tieneCarnet;
+
+resultado = true
+
+Pregunta 7
+
+let nota = 7;
+let asistencia = 80;
+let resultado = nota >= 5 && asistencia >= 85;
+
+resultado = false
+
+Pregunta 8
+
+let edad = 17;
+let autorizado = true;
+let acompañado = false;
+let resultado = edad >= 18 || (autorizado && acompañado);
+
+resultado = false
+
+Pregunta 9
+
+let nota = 4;
+let recuperacion = 6;
+let resultado = nota >= 5 || recuperacion >= 5;
+
+resultado = true
+
+Pregunta 10
+
+let edad = 22;
+let tieneCarnet = true;
+let sancionado = false;
+let resultado = (edad >= 18 && tieneCarnet) && !sancionado;
+
+resultado = true;
+
+
+EJERCICIO 2.
+
+Pregunta 1. Una persona puede participar en una actividad si tiene al menos 18 años y dispone de autorización.
+
+let edad = 20;
+let autorizado = true;
+let resultado = edad >= 18 && autorizado;
+
+Pregunta 2. Una persona debe recibir un aviso si no tiene una cuenta activa o está bloqueada.
+
+let cuentaActiva = true;
+let bloqueado = false;
+let resultado = cuentaActiva || bloqueado;
+
+Ejercicio 3
+
+Pregunta 1
+
+let edad = 16;
+let resultado = edad >= 18 ? "Mayor de edad" : "Menor de edad";
+
+resultado = "Menor de edad"
+
+Pregunta 2
+
+let nota = 7;
+let resultado = nota >= 5 ? "Aprobado" : "Suspenso";
+
+resultado = "Aprobado"
+
+Pregunta 3
+
+let temperatura = 12;
+let resultado = temperatura < 15 ? "Hace frío" : "Hace calor";
+
+resultado = "Hace frio"
+
+Pregunta 4
+
+let numero = 8;
+let resultado = numero % 2 === 0 ? "Par" : "Impar";
+
+resultado = "Par"
+
+Pregunta 5
+
+let saldo = 40;
+let precio = 50;
+let resultado = saldo >= precio ? "Compra posible" : "Saldo insuficiente";
+
+resultado = "Saldo insuficiente"
+
+Pregunta 6
+
+let edad = 18;
+let resultado = edad > 18 ? "Más de 18" : "18 o menos";
+
+resultado = "18 o menos"
+
+Pregunta 7
+
+let usuarioActivo = false;
+let resultado = usuarioActivo ? "Acceso permitido" : "Acceso denegado";
+
+resultado = "Acceso denegado"
+
+Pregunta 8
+
+let edad = 19;
+let tieneCarnet = true;
+let resultado = edad >= 18 && tieneCarnet ? "Puede conducir" : "No puede conducir";
+
+resultado = "Puede conducir"
+
+Pregunta 9
+
+let nota = 4;
+let recuperacion = 6;
+let resultado = (nota >= 5 || recuperacion >= 5) ? "Superado" : "Pendiente";
+
+resultado = "Superado"
+
+Pregunta 10
+
+let precio = 80;
+let esSocio = true;
+let resultado = esSocio ? precio * 0.9 : precio;
+
+resultado = 72
+
+
+EJERCICIO 4.
+
+Pregunta 1. Dada la variable nota , almacena "Aprobado" si es mayor o igual que 5 y "Suspenso" en caso contrario
+
+let nota = 4;
+let resultado = nota >= 5 ? "Aprobado" : "Suspenso";
+
+Pregunta 2. Dada la variable numero , almacena "Positivo" si es mayor que 0 y "No positivo" en caso contrario
+
+let numero = 0;
+let resultado = numero > 0 ? "Positivo" : "Negativo";
+
+Pregunta 3. Dada la variable numero , almacena "Par" si es divisible entre 2 y "Impar" en caso contrario.
+
+let numero = 13;
+let resultado = numero % 2 === 0 ? "Par" : "Impar";
+
+Pregunta 4. Dadas las variables a y b , almacena en resultado el mayor de los dos valores numéricos. Si son iguales,
+cualquiera de los dos sirve.
+
+let a = 12;
+let b = 9;
+let resultado = a > b ? a : b;
+
+Pregunta 5. Dadas las variables precio y esSocio , almacena el precio con un 10 % de descuento si esSocio es true y
+el precio original en caso contrario. resultado debe contener un número, no una cadena.
+
+let precio = 80;
+let esSocio = true;
+let resultado = esSocio ? precio - (precio * 0.1) : precio;
+
+Pregunta 6. Dadas las variables edad y tieneAutorizacion , almacena "Acceso permitido" si la persona es mayor de
+edad o tiene autorización; en caso contrario, "Acceso denegado" .
+
+let edad = 16;
+let tieneAutorizacion = true;
+let resultado = edad > 18 || tieneAutorizacion ? "Acceso permitido" : "Acceso denegado";
+
+Pregunta 7.Dadas las variables saldo , precio y cuentaBloqueada , almacena "Compra posible" si hay saldo suficiente
+y la cuenta no está bloqueada. En caso contrario, almacena "Compra no posible" .
+
+let saldo = 60;
+let precio = 50;
+let cuentaBloqueada = false;
+let resultado = saldo >= precio && !cuentaBloqueada ? "Compra posible" : "Compra no posible";
+
+Pregunta 8. Dadas las variables examen y practicas , almacena "Superado" si ambas notas son mayores o iguales que
+5. En caso contrario, almacena "Pendiente" .
+
+let examen = 6;
+let practicas = 4;
+let resultado = examen >= 5 && practicas >= 5 ? "Superado" : "Pendiente";
+
+*/
