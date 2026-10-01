@@ -1,0 +1,14 @@
+body{
+    background-color: azure;
+}
+.green{
+    background-color: greenyellow;
+}
+
+.greenHist{
+    background-color: rgb(2, 94, 2);
+}
+
+.negrita{
+    font-weight: bold;
+}
