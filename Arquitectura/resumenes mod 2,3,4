@@ -1,0 +1,153 @@
+RESUMIDO MODULO 2
+
+1. Arquitectura en la Nube y el Marco de AWS Well-Architected
+Arquitectura en la nube: Práctica de aplicar características de la nube para satisfacer necesidades técnicas y empresariales.
+
+Marco de AWS Well-Architected: Guía con un enfoque coherente para evaluar y diseñar arquitecturas en la nube. Se organiza en 6 pilares:
+
+Excelencia operativa: Ejecutar sistemas, obtener información operativa y mejorar continuamente procesos.
+
+Seguridad: Proteger información, sistemas y activos mediante evaluaciones de riesgo y mitigación.
+
+Fiabilidad: Capacidad de recuperarse de errores, adquirir recursos dinámicamente y mitigar interrupciones (como errores de red o configuración).
+
+Eficiencia del rendimiento: (Mencionado en la lista de pilares).
+
+Optimización de costos: Proceso iterativo para eliminar gastos innecesarios a lo largo del ciclo de vida del producto, cambiando gastos fijos (compra de activos físicos) por gastos variables.
+
+Sostenibilidad: Crear arquitecturas que maximicen la eficiencia, reduzcan el desperdicio y minimicen el impacto ambiental, económico y social.
+
+2. Herramienta de AWS Well-Architected (AWS WA)
+Permite revisar el estado de las cargas de trabajo y compararlas con las prácticas recomendadas de AWS.
+
+Beneficios: Minimiza errores y costos operativos, profundiza en los procesos, guía en buenas prácticas y ayuda a cumplir con la propuesta de valor de la nube.
+
+3. Conceptos Clave de AWS y Rendimiento
+Almacenamiento en caché: Técnica para guardar datos temporalmente en una ubicación intermedia con el fin de acelerar solicitudes futuras, reducir el tráfico de red y evitar acceder a la capa de almacenamiento principal (más lenta).
+
+Grupos de seguridad en Amazon EC2: Permiten controlar qué puertos de las instancias envían y reciben tráfico, así como determinar el origen y destino de dicho tráfico.
+
+Aislamiento regional: Las regiones de AWS están completamente aisladas para garantizar tolerancia a errores y estabilidad. Los datos y recursos de una región no se replican automáticamente en otras.
+
+
+RESUMIDO MODULO 3
+
+1. El Modelo de Responsabilidad Compartida en AWS
+La seguridad se divide en dos grandes bloques:
+
+Responsabilidad de AWS ("Seguridad de la nube"): AWS administra y protege la infraestructura global que ejecuta los servicios (hardware, software, redes, instalaciones físicas, la capa de virtualización y el sistema operativo del host).
+
+Responsabilidad del cliente ("Seguridad en la nube"): El usuario asume la administración de los sistemas invitados (como los sistemas operativos en instancias EC2), las aplicaciones, la configuración de redes y firewalls (como los grupos de seguridad), la gestión de cuentas y el cifrado de los datos.
+
+2. Principios Clave de Diseño de Seguridad
+Base de identidad sólida: Aplicar el principio de mínimo privilegio, separar obligaciones y eliminar credenciales estáticas a largo plazo.
+
+Protección de datos: Clasificar la sensibilidad de los datos y utilizar cifrado, tokenización y control de acceso tanto en tránsito como en reposo.
+
+Defensa en profundidad: Aplicar múltiples controles de seguridad en todas las capas (red, VPC, balanceadores, instancias, sistema operativo y código).
+
+Minimizar el acceso humano: Reducir o eliminar el procesamiento manual directo de datos para evitar errores humanos y malas gestiones.
+
+Trazabilidad: Monitorear, auditar y crear alertas en tiempo real sobre los cambios en el entorno, integrando la recolección de métricas y registros de forma automatizada.
+
+Preparación para incidentes: Disponer de políticas de respuesta, ejecutar simulaciones y usar herramientas automatizadas para acelerar la detección y recuperación.
+
+Automatización de la seguridad: Utilizar mecanismos basados en software y controles definidos como código en plantillas versionadas para escalar de forma segura.
+
+3. Conceptos de AWS IAM (Identity and Access Management)
+Recurso de IAM: Cualquier objeto almacenado en IAM (usuarios, grupos, roles, políticas o proveedores de identidad).
+
+Entidad de IAM: Objeto de recurso utilizado para la autenticación (usuarios y roles de IAM) que permite iniciar sesión en la consola o hacer peticiones a través de la API o CLI de AWS.
+
+Identidad de IAM: Objeto utilizado para identificar y agrupar (incluye usuarios, grupos y roles a los que se les pueden adjuntar políticas).
+
+Entidad principal (Principal): Persona o aplicación que utiliza el usuario raíz, un usuario de IAM o un rol para realizar solicitudes a AWS (incluye roles asumidos y usuarios federados externos).
+
+4. Elementos de un Documento de Políticas de IAM
+Las políticas que definen los permisos están compuestas por los siguientes elementos principales:
+
+Versión: Especifica la versión del lenguaje de la política.
+
+Efecto: Define si se permite o deniega el acceso (Allow o Deny).
+
+Entidad principal (Principal): A quién se aplica la política (obligatorio en políticas basadas en recursos; implícito si se adjunta directamente a un usuario o rol).
+
+Acción: Lista de acciones específicas que se permiten o deniegan.
+
+Recurso: Lista de recursos de AWS a los que se aplican dichas acciones (obligatorio al adjuntar a un usuario/rol, opcional en políticas basadas en recursos).
+
+Condición (Opcional): Circunstancias específicas bajo las cuales la política otorga los permisos.
+
+RESUMIDO MODULO 4
+
+1. Tipos de Almacenamiento en la Nube
+Almacenamiento en bloques: Divide los datos en bloques de tamaño fijo con un identificador único. Se almacenan de forma eficiente en distintos sistemas y pueden trabajar con diferentes sistemas operativos. Las aplicaciones y sistemas de archivos gestionan el acceso y modificación.
+
+Almacenamiento de archivos: Metodología jerárquica similar a una unidad de red compartida centralizada, donde usuarios, aplicaciones y servicios acceden a archivos compartidos.
+
+Almacenamiento de objetos: Los archivos se almacenan como objetos compuestos por datos, metadatos (información y propósito del objeto) y una clave (identificador único). Al actualizar un archivo, se modifica el objeto completo, no un fragmento.
+
+2. Amazon S3 (Servicio de Almacenamiento de Objetos)
+Buckets: Contenedores de objetos con nombres únicos a nivel mundial. Organizan los espacios de nombres, determinan los cargos, gestionan el control de acceso y sirven para informes de uso.
+
+Características de los Objetos:
+
+Tamaño: De 0 bytes a 5 TB por objeto, con capacidad total casi ilimitada.
+
+Clave: Nombre único (incluye la ruta completa a la raíz del bucket) que permite recuperar el objeto.
+
+ID de versión: Identificador único junto con la clave cuando el control de versiones está activo.
+
+Valor: Contenido real del objeto (secuencia de bytes). Es inmutable (no se puede modificar directamente una vez cargado; hay que reemplazarlo).
+
+Metadatos: Pares de nombre-valor (definidos por el usuario o asignados por el sistema de forma automática).
+
+Subrecursos: Información adicional específica del objeto.
+
+3. Rendimiento y Transferencia de Datos en S3
+Cargas multiparte: Permiten subir partes de un objeto simultáneamente para mejorar el rendimiento, recuperar redes caídas fácilmente, pausar/reanudar transferencias y comenzar a cargar antes de conocer el tamaño final.
+
+S3 Transfer Acceleration: Característica a nivel de bucket que acelera la transferencia de archivos a largas distancias aprovechando las ubicaciones periféricas de CloudFront.
+
+AWS Transfer Family: Servicio completamente administrado y sin servidor para transferir archivos de forma segura hacia Amazon S3 o Amazon EFS mediante protocolos estándar, sin modificar aplicaciones.
+
+4. Clases de Almacenamiento de Amazon S3
+S3 Standard: Alto rendimiento, disponibilidad y durabilidad para datos de acceso frecuente (baja latencia).
+
+S3 Intelligent-Tiering: Mueve automáticamente los datos entre niveles de acceso según su frecuencia para reducir costos sin afectar el rendimiento.
+
+S3 Standard - Acceso poco frecuente (Standard-IA): Para datos de acceso menos frecuente con menor costo de almacenamiento pero mayor costo de recuperación (mínimo 30 días de retención).
+
+S3 OneZone-IA: Almacena datos en una única Zona de Disponibilidad (opción más económica, ideal para copias secundarias o datos regenerables).
+
+S3 Glacier Instant Retrieval: Almacenamiento de archivo de menor costo con recuperación en milisegundos para datos de acceso infrecuente pero inmediato.
+
+S3 Glacier Flexible Retrieval: Para datos que se recuperan 1 o 2 veces al año de forma asincrónica (respaldo y recuperación de desastres).
+
+S3 Glacier Deep Archive: La clase más económica, diseñada para retención a largo plazo (7 a 10 años o más) por cumplimiento normativo.
+
+S3 en Outposts: Almacenamiento de objetos local en entornos físicos de AWS Outposts.
+
+5. Ciclo de Vida y Control de Versiones de S3
+Políticas de Ciclo de Vida: Reglas automatizadas para aplicar dos tipos de acciones sin cambiar la aplicación:
+
+Acciones de transición: Mueven los objetos a clases de almacenamiento más económicas con el tiempo.
+
+Acciones de vencimiento: Eliminan automáticamente los objetos cuando expiran.
+
+Control de Versiones: Protege contra sobrescrituras y eliminaciones accidentales (se habilita por bucket y no se puede desactivar, solo suspender).
+
+Estados posibles: Habilitado (crea nuevas versiones con ID único y marca eliminaciones lógicas), Desactivado (sobrescribe o borra permanentemente por defecto) y Suspendido.
+
+6. Criterios para Elegir una Región de AWS
+Al decidir dónde alojar datos y recursos, se deben evaluar cinco factores clave:
+
+Cumplimiento normativo y privacidad: Leyes locales y normativas estrictas (ej. HIPAA) que dictan dónde deben residir los datos.
+
+Proximidad y latencia: Minimizar la distancia para garantizar una respuesta rápida y fluida a los usuarios.
+
+Disponibilidad de servicios: Verificar que los productos y características específicos de AWS estén operativos en dicha región.
+
+Costos: Las tarifas de los servicios varían según la región seleccionada.
+
+Replicación multi-región: Distribuir cargas en varias regiones para acercarse a clientes globales, aunque requiere evaluar la complejidad de administración y la latencia al sincronizar bases de datos centrales (como Amazon RDS).
