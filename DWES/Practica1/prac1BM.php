@@ -180,10 +180,37 @@
                 'categoria' => 'electrónica'
             ]
         ];
+        $productosConDescuento = [
+            'prod1' => [
+                'nombre' => 'portátil gaming',
+                'precio' => 899.99,
+                'stock' => 15,
+                'categoria' => 'electrónica',
+                'descuento' => 15 
+            ],
+            'prod2' => [
+                'nombre' => 'mesa escritorio',
+                'precio' => 120.50,
+                'stock' => 8,
+                'categoria' => 'hogar',
+                'descuento' => 5
+            ],
+            'prod3' => [
+                'nombre' => 'ratón inalámbrico',
+                'precio' => 25.99,
+                'stock' => 0,
+                'categoria' => 'electrónica',
+            ]
+        ];
 
-        foreach($productos as $producto){
+        foreach($productosConDescuento as $producto){
             $nombre = ucfirst($producto['nombre']); // la primera letra mayuscula
             $precio = calculateIVA($producto['precio']);
+
+            if (isset($producto['descuento'])) {
+                $precioDescuento = $precio * (1 - ($producto['descuento'] / 100));
+                $precioMostrar = "<del>" . formatPrice($precio) . "</del> " . formatPrice($precioDescuento);
+            }
             if ($producto['stock'] > 10) {
                 $color = 'green';
             } elseif ($producto['stock'] > 0) {
