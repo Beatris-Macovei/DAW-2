@@ -31,7 +31,13 @@
         return $precio;
     }
 
-    funcion getStock($array)
+    function getStock($array){
+        foreach($array as $stock){
+            if($stock == 0){
+                return $stock;
+            }
+        }
+    }
 
 ?>
 
