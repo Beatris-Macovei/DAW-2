@@ -158,6 +158,47 @@
     ?>
 
     <h2>Ejercicio 3</h2>
+    <?php
+        require_once 'shopBM.php';
+        $productos = [
+            'prod1' => [
+                'nombre' => 'portátil gaming',
+                'precio' => 899.99,
+                'stock' => 15,
+                'categoria' => 'electrónica'
+            ],
+            'prod2' => [
+                'nombre' => 'mesa escritorio',
+                'precio' => 120.50,
+                'stock' => 8,
+                'categoria' => 'hogar'
+            ],
+            'prod3' => [
+                'nombre' => 'ratón inalámbrico',
+                'precio' => 25.99,
+                'stock' => 0,
+                'categoria' => 'electrónica'
+            ]
+        ];
+
+        foreach($productos as $producto){
+            $nombre = ucfirst($producto['nombre']); // la primera letra mayuscula
+            $precio = calculateIVA($producto['precio']);
+            if ($producto['stock'] > 10) {
+                $color = 'green';
+            } elseif ($producto['stock'] > 0) {
+                $color = 'orange';
+            } else {
+                $color = 'red';
+            }
+
+            echo "<p>Nombre: $nombre <br>";
+            echo "Precio: $precio <br>";
+            echo "Stock: <span style='color: $color;'>{$producto['stock']}</span></p>";
+
+        }
+    ?>
+    
     </code>
 </body>
 </html>
