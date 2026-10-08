@@ -21,23 +21,23 @@
     ];
 
     function formatPrice($precio){
-        return $precio;
+        return number_format($precio, 2) . " $";
     }
 
-    function calculateIVA($precio, $iva){
-        $iva = 0.21;
+    function calculateIVA($precio, $iva = 0.21){
         $result = $precio * $iva;
         $precio += $result;
         return $precio;
     }
 
-    function getStock($array){
-        foreach($array as $stock){
-            if($stock == 0){
-                return $stock;
+    function getStock($productos){
+        $vuelta = [];
+        foreach($productos as $prod => $producto){
+            if($producto['stock'] > 0){
+                $vuelta[$prod] = $producto;
             }
         }
+        return $vuelta;
     }
 
 ?>
-
