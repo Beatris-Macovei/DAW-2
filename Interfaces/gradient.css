@@ -1,0 +1,37 @@
+body{
+    background-color: black;
+}
+
+h1{
+    background: linear-gradient(to right, pink, purple, blue, rgb(83, 83, 204), yellow, yellowgreen, green);
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+}
+
+.contenedor{
+    background-color: black;
+    padding: 10px;
+    display: block;
+    text-align: center;
+}
+
+.texto{
+    background: linear-gradient(to right, pink, purple, blue, rgb(83, 83, 204), yellow, yellowgreen, green);
+    background-clip: text;
+    color: transparent;
+}
+
+.border{
+    background: linear-gradient(to right, pink, purple, blue, rgb(83, 83, 204), yellow, yellowgreen, green);
+    padding: 10px;
+}
+
+.boton:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgb(29, 146, 255);
+}
+
+.boton:hover span{
+    background-color: #333;
+}
