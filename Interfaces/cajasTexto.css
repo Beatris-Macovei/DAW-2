@@ -1,0 +1,20 @@
+.caja1{
+    background-color: grey;
+    padding: 10px;
+    display: inline-block;
+    width: 48%; 
+}
+
+.caja2{
+    background-color: rgb(85, 85, 85);
+    padding: 10px;
+    display: inline-block;
+    width: 48%; 
+}
+
+@media only screen and (max-width: 500px){
+    div{
+        display: block;
+        width: 100%;
+    }
+}
